@@ -5,9 +5,9 @@ FROM nginx:1.20
 # AFTER THAT YOUR PERSISTENT FOLDER AND THE NGINX CONFIG FOLDER WILL BE LINKED
 # THIS MEANS YOU CAN CHANGE THE CONFIGURATION FROM THE FILE BROWSER :-)
 
-COPY html /usr/share/nginx/html
-COPY config /etc/nginx
+WORKDIR /usr/src/nginx
+COPY . .
 
 EXPOSE 80
 
-CMD nginx -g 'daemon off;'
+CMD '/usr/src/nginx/run.sh'
