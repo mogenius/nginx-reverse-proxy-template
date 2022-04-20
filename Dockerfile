@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:stable-alpine
+FROM nginx:1.18.0
 
 # IMPORTANT NOTICE
 # THIS TEMPLATE WILL COPY THE DEFAULT CONFIG INTO YOUR PERSISTENT FOLDER
@@ -8,12 +8,6 @@ FROM nginxinc/nginx-unprivileged:stable-alpine
 WORKDIR /usr/src/nginx
 COPY . .
 
-EXPOSE 8080
-#USER 0
-#RUN chown -R 101:101 /etc/nginx
-#RUN chown -R 101:101 /usr/share/nginx/html
+EXPOSE 80
 
-#ENTRYPOINT /usr/src/nginx/run.sh
-
-USER 101
-CMD nginx -g 'daemon off;'
+CMD '/usr/src/nginx/run.sh'
