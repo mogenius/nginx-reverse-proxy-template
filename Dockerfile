@@ -10,6 +10,4 @@ COPY . .
 
 EXPOSE 8080
 
-USER 101
-
 CMD '/usr/src/nginx/run.sh'
