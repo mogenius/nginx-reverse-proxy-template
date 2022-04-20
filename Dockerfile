@@ -9,7 +9,7 @@ WORKDIR /usr/src/nginx
 COPY . .
 
 EXPOSE 8080
-USER 1
+USER root
 ENTRYPOINT /usr/src/nginx/run.sh
 
 USER 101
