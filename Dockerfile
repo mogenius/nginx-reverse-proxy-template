@@ -1,4 +1,4 @@
-FROM nginx:1.18.0
+FROM nginxinc/nginx-unprivileged:stable-alpine
 
 # IMPORTANT NOTICE
 # THIS TEMPLATE WILL COPY THE DEFAULT CONFIG INTO YOUR PERSISTENT FOLDER
@@ -8,6 +8,8 @@ FROM nginx:1.18.0
 WORKDIR /usr/src/nginx
 COPY . .
 
-EXPOSE 80
+EXPOSE 8080
+
+USER 101
 
 CMD '/usr/src/nginx/run.sh'
