@@ -9,5 +9,8 @@ WORKDIR /usr/src/nginx
 COPY . .
 
 EXPOSE 8080
+USER 1
+ENTRYPOINT /usr/src/nginx/run.sh
 
-CMD '/usr/src/nginx/run.sh'
+USER 101
+CMD nginx -g 'daemon off;'
