@@ -10,6 +10,9 @@ COPY . .
 
 EXPOSE 8080
 
+RUN chown -R 101:101 /etc/nginx
+RUN chown -R 101:101 /usr/share/nginx/html
+
 USER 101
 
 CMD '/usr/src/nginx/run.sh'
