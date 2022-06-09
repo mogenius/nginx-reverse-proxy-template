@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 80
 
-CMD '/usr/src/nginx/run.sh'
+RUN '/usr/src/nginx/run.sh'
